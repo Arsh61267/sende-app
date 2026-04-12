@@ -1,17 +1,22 @@
-import os
 import gdown
+import os
 
 def download_all_models():
-    folder_id = "1StjMaAPcdpYs4m6wflUufvowBwpGNKHc"
-    output = "models"
+    os.makedirs("models", exist_ok=True)
 
-    if not os.path.exists(output):
-        os.makedirs(output)
+    files = {
+        "best_fusion_mlp_logvita.pt": "1RQIKT3utg_rmUNNtn3al1RC6GQmSjs_f",
+        "best_img_mlp.pt": "1b90jvPYJqFLXEq_mArofgwVsX1aSLfHs",
+        "best_img_mlp_logvita.pt": "1SJ_XoJ-XI2zrhxZy_6NgfxUaovUObesN",
+        "reproduce_best_fusion.pt": "1UMco7Al-Cs5YMnH1DkNrt3--HJ-si1cg"
+    }
 
-    # download entire folder
-    gdown.download_folder(
-        id=folder_id,
-        output=output,
-        quiet=False,
-        use_cookies=False
-    )
+    for name, file_id in files.items():
+        path = f"models/{name}"
+
+        if not os.path.exists(path):
+            print(f"Downloading {name}...")
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, path, quiet=False)
+        else:
+            print(f"{name} already exists.")

@@ -27,7 +27,7 @@ from utils.report_engine import build_pdf_report
 # =====================================================
 
 st.set_page_config(
-    page_title="SENDE — Sistem Evaluasi Gizi dan Diet Elektronik MPASI",
+    page_title="SENDE — Sistem Evaluasi Nilai Gizi dan Diet Elektronik MPASI",
     layout="wide"
 )
 
@@ -64,7 +64,7 @@ section[data-testid="stSidebar"] {
 # TITLE
 # =====================================================
 
-st.title("🥣 SENDE — Sistem Evaluasi Gizi dan Diet Elektronik MPASI")
+st.title("🥣 SENDE — Sistem Evaluasi Nilai Gizi dan Diet Elektronik MPASI")
 st.caption("Human-Centered Multimodal AI + Explainable Decision Support")
 
 
@@ -99,7 +99,7 @@ st.sidebar.header("Profil anak")
 
 infant_name = st.sidebar.text_input("Nama")
 age_months = st.sidebar.number_input("Umur (bulan)", 6, 24, 8)
-Jenis_kelamin = st.sidebar.selectbox("Sex", ["Laki-laki", "Perempuan"])
+Jenis_kelamin = st.sidebar.selectbox("Jenis Kelamin", ["Laki-laki", "Perempuan"])
 weight = st.sidebar.number_input("Berat (kg)", 4.0, 20.0, 8.0)
 height = st.sidebar.number_input("Tinggi (cm)", 55, 100, 70)
 

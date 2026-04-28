@@ -99,7 +99,7 @@ st.sidebar.header("Profil anak")
 
 infant_name = st.sidebar.text_input("Nama")
 age_months = st.sidebar.number_input("Umur (bulan)", 6, 24, 8)
-sex = st.sidebar.selectbox("Sex", ["Laki-laki", "Perempuan"])
+Jenis_kelamin = st.sidebar.selectbox("Sex", ["Laki-laki", "Perempuan"])
 weight = st.sidebar.number_input("Berat (kg)", 4.0, 20.0, 8.0)
 height = st.sidebar.number_input("Tinggi (cm)", 55, 100, 70)
 
